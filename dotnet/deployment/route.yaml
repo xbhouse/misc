@@ -1,0 +1,12 @@
+kind: Route
+apiVersion: route.openshift.io/v1
+metadata:
+  name: svc-dotnet
+  namespace: pipelines-dotnet-test
+spec:
+  to:
+    kind: Service
+    name: svc-dotnet
+    weight: 100
+  port:
+    targetPort: 8080

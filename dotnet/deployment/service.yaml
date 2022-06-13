@@ -1,0 +1,10 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: svc-dotnet
+  namespace: pipelines-dotnet-test
+spec:
+  ports:
+    - protocol: TCP
+      port: 8080
+      targetPort: 8080

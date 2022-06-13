@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: dotnet-test
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: dotnet-test
+  template:
+    metadata:
+      labels:
+        app: dotnet-test
+    spec:
+      containers:
+        - name: app
+          image: quay.io/bhouse/dotnest-test:latest
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 8080
+              name: public
