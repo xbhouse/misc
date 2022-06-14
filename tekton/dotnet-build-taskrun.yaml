@@ -1,0 +1,13 @@
+apiVersion: tekton.dev/v1beta1
+kind: TaskRun
+metadata:
+  generateName: dotnet-build-
+  labels:
+    tekton.dev/task: dotnet-build
+spec:
+  taskRef:
+    name: dotnet-build
+  workspaces: 
+    - name: directory
+      persistentVolumeClaim:
+        claimName: git-source-pvc

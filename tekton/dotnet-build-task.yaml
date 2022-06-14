@@ -1,0 +1,17 @@
+# WIP
+
+apiVersion: tekton.dev/v1beta1
+kind: Task
+metadata:
+  name: dotnet-build
+  namespace: clone-build-push-dotnet
+spec:
+  workspaces:
+    - name: directory
+  steps:
+    - image: mcr.microsoft.com/dotnet/sdk
+      name: build-app
+      script: |
+        dotnet --info
+        cd workspace/directory
+        ls -la 

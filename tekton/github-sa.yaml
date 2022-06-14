@@ -1,0 +1,12 @@
+kind: ServiceAccount
+apiVersion: v1
+metadata:
+  name: github-sa
+  namespace: clone-build-push-dotnet
+secrets:
+  - name: github-pat-secret
+  - name: github-sa-token-n8pwh
+  - name: github-sa-dockercfg-cwf6n
+imagePullSecrets:
+  - name: github-sa-dockercfg-cwf6n
+
